@@ -1,0 +1,5 @@
+jdbcUrl=jdbc:oracle:thin:@localhost:1522:ORCL
+user=jason
+password=jason
+devMode=true
+jdbcDriver=oracle.jdbc.driver.OracleDriver
