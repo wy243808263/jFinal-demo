@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jfinalplus</groupId>
+	<artifactId>jfinal-plus-parent</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<name>${project.artifactId}</name>
+	<url>https://git.oschina.net/Bitter/jfinal-plus.git</url>
+	<description>parent pom.xml of jfinal-plus</description>
+
+	<scm>
+		<url>https://git.oschina.net/Bitter/jfinal-plus.git</url>
+		<connection>scm:git:https://git.oschina.net/Bitter/jfinal-plus.git</connection>
+		<developerConnection>scm:git:https://git.oschina.net/Bitter/jfinal-plus.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>git@osc issue</system>
+		<url>http://git.oschina.net/Bitter/jfinal-plus/issues</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<name>The Apache License (VERSION 2.0)</name>
+			<url>http://www.apache.org/licenses/</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>jfinal-plus</id>
+			<name>Bitter</name>
+			<email>Bitter2016@126.com</email>
+			<url>http://git.oschina.net/Bitter/jfinal-plus</url>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<id>oss-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>oss-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>oss-staging</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<properties>
+		<!-- compiler -->
+		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
+	<profiles>
+		<profile>
+			<id>oss</id>
+			<build>
+				<plugins>
+					<!-- Source -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Javadoc -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- GPG -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

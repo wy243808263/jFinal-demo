@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jfinalplus</groupId>
+	<artifactId>jfinal-plus</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>${project.artifactId}</name>
+	<description>jfinal-plus</description>
+	<url>http://git.oschina.net/Bitter/jfinal-plus</url>
+
+	<modules>
+		<module>jfinal-plus-parent</module>
+		<module>jfinal-plus-spring</module>
+		
+		<module>jfinal-plus-core</module>
+		<module>jfinal-plus-tsql</module>
+		
+		<module>samples/jfinal-plus-spring-demo</module>
+	</modules>
+
+	<scm>
+		<url>https://git.oschina.net/Bitter/jfinal-plus.git</url>
+		<connection>scm:git:https://git.oschina.net/Bitter/jfinal-plus.git</connection>
+		<developerConnection>scm:git:https://git.oschina.net/Bitter/jfinal-plus.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>git@osc issue</system>
+		<url>http://git.oschina.net/Bitter/jfinal-plus/issues</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<name>The Apache License (VERSION 2.0)</name>
+			<url>http://www.apache.org/licenses/</url>
+		</license>
+	</licenses>
+
+</project>

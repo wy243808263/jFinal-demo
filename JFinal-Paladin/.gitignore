@@ -1,0 +1,4 @@
+*.log
+/.idea/*
+Paladin.iml
+/out/*
